@@ -2,8 +2,8 @@ import type { Route } from "./+types/home";
 
 export default function Home() {
   return (
-  
-  <h1>Hi</h1>
-
+    <div>
+      <h1>Hi there</h1>
+    </div>
   );
 }
