@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import { Link } from "react-router";
+import '../app.scss'
 
 export default function Header() {
   return (
