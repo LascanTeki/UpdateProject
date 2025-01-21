@@ -1,11 +1,19 @@
 import { Outlet } from "react-router";
+import { useState } from "react";
 import { Link } from "react-router";
 import '../app.scss'
 
-export default function Header() {
+interface HeaderProps {
+  className?: string;
+}
+
+export default function Header({ className }: HeaderProps) {
+
+  const [headerClass, setHeaderClass] = useState("");
+
   return (
     <div className="container">
-      <div className="header">
+      <div className={`header ${headerClass}`}>
         <nav>
           <ul>
           <Link to={'/'}><li>Home</li></Link>
@@ -14,7 +22,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        <Outlet />
+        <Outlet context={{ setHeaderClass }} />
       </div>
       <div className="background"></div>
     </div>

@@ -1,34 +1,28 @@
-
 import { Link } from "react-router";
 
+// Define the ProjectData type
 interface ProjectData {
-    id: number;
-    title: string;
-    link: string;
-  }
+  id: number;
+  logo: string;
+  title: string;
+  link: string;
+}
 
 interface Prop {
-    data: ProjectData | undefined;
-  }
+  data: ProjectData | undefined;
+}
 
 export default function Project(props: Prop) {
-
-    return (
-        <div>
-          {props.data ? (
-            <>
-              <p>ID: {props.data.id}</p>
-              <p>Title: {props.data.title}</p>
-              <p>
-                Link:{" "}
-                <a href={props.data.link} target="_blank" rel="noopener noreferrer">
-                  {props.data.link}
-                </a>
-              </p>
-            </>
-          ) : (
-            <p>No project data available.</p>
-          )}
-        </div>
-      );
-  }
+  
+  return (
+    <div className="data">
+      {props.data ? (
+        <>
+          <img src={`/Ressources/${props.data.logo}`} alt={props.data.title}/>
+        </>
+      ) : (
+        <p>No project data available.</p>
+      )}
+    </div>
+  );
+}
