@@ -11,6 +11,12 @@ var list = [
     title: "OhMyFood",
     link: "https://lascanteki.github.io/MelvinCourageux_3_14102021/index.html",
   },
+  {
+    id: 2,
+    logo: "GameOn.png",
+    title: "GameOn",
+    link: "https://lascanteki.github.io/MelvinCourageux_4_10112021/",
+  },
 ];
 
 export default list

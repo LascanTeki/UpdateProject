@@ -1,6 +1,7 @@
 #Projects {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   :hover {
     background-color: rgb(141, 138, 138);
   }
@@ -12,9 +13,11 @@
   padding: 15px;
   cursor: pointer;
   width: 35%;
+  height: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2%;
   img {
     width: -webkit-fill-available;
   }
@@ -23,9 +26,34 @@
   }
 }
 
-#ProjectDetails{
-    background-color: rgb(141, 138, 138);
-    position: fixed;
+/*Animation*/
+@keyframes expand {
+  0% {
     right: 0;
-    border-radius: 2%;
+    transform: scale(0.5, 1);
+    opacity: 0%;
+  }
+  100% {
+    right: 4%;
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+#ProjectDetails {
+  background-color: rgb(141, 138, 138);
+  position: fixed;
+  right: 4%;
+  top: 10%;
+  transform: scale(1);
+  border-radius: 2%;
+  animation-name: expand;
+  animation-duration: 1s;
+  height: 80%;
+  width: 29%;
+  animation-fill-mode: backwards;
+  img {
+    width: -webkit-fill-available;
+    padding: 10%;
+  }
 }

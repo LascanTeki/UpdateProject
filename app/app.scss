@@ -48,8 +48,9 @@ h1 {
   z-index: 5;
   margin-inline: 15%;
   width: 70%;
-  height: 60%;
+  height: 80%;
   background-color: rgb(70, 70, 70);
+  transition: width 1s;
   ul {
     list-style-type: none;
     margin: 0px;
@@ -58,9 +59,12 @@ h1 {
     display: flex;
     justify-content: space-around;
   }
-  .project{
-    width: 50%;
-  }
+}
+
+.project{
+  transition: width 1s;
+  width: 50%;
+  margin-right: 4%;
 }
 
 a{
