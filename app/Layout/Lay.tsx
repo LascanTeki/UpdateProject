@@ -1,5 +1,5 @@
-import { Outlet } from "react-router";
-import { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import '../app.scss'
 
@@ -8,8 +8,13 @@ interface ContentProps {
 }
 
 export default function Content({ className }: ContentProps) {
-
   const [ContentClass, setContentClass] = useState("");
+  const location = useLocation();
+
+  // Reset class when navigating to a new page
+  useEffect(() => {
+    setContentClass("");
+  }, [location.pathname]);
 
   return (
     <div className="container">
