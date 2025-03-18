@@ -3,17 +3,17 @@ import { useState } from "react";
 import { Link } from "react-router";
 import '../app.scss'
 
-interface HeaderProps {
+interface ContentProps {
   className?: string;
 }
 
-export default function Header({ className }: HeaderProps) {
+export default function Content({ className }: ContentProps) {
 
-  const [headerClass, setHeaderClass] = useState("");
+  const [ContentClass, setContentClass] = useState("");
 
   return (
     <div className="container">
-      <div className={`header ${headerClass}`}>
+      <div className={`content ${ContentClass}`}>
         <nav>
           <ul>
           <Link to={'/'}><li>Home</li></Link>
@@ -22,7 +22,7 @@ export default function Header({ className }: HeaderProps) {
           </ul>
         </nav>
 
-        <Outlet context={{ setHeaderClass }} />
+        <Outlet context={{ setContentClass }} />
       </div>
       <div className="background"></div>
     </div>

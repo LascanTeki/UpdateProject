@@ -17,22 +17,22 @@ const { BrowserRouter, Routes, Route, Outlet, useOutletContext } = ReactRouterDo
 
 // Define the context type
 interface OutletContext {
-  setHeaderClass: (className: string) => void;
+  setContentClass: (className: string) => void;
 }
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
 
-  // Access setHeaderClass from the outlet context
-  const { setHeaderClass } = useOutletContext<OutletContext>();
+  // Access setContentClass from the outlet context
+  const { setContentClass } = useOutletContext<OutletContext>();
 
   const handleProjectClick = (project: ProjectData) => {
     if (selectedProject?.id === project.id) {
       setSelectedProject(null);
-      setHeaderClass(""); // Reset header class
+      setContentClass(""); // Reset Content class
     } else {
       setSelectedProject(project);
-      setHeaderClass("project"); // Add "project" class to header
+      setContentClass("project"); // Add "project" class to Content
     }
   };
 
@@ -52,7 +52,7 @@ export default function Projects() {
           <button
             onClick={() => {
               setSelectedProject(null);
-              setHeaderClass("");
+              setContentClass("");
             }}
           >
             x
