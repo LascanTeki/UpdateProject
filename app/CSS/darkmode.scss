@@ -1,0 +1,27 @@
+/* darkmode.scss */
+.dark-mode-toggle {
+    padding: 8px 16px;
+    border: none;
+    background-color: #ffff;
+    color: #444;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease ;
+    font-size: 1rem;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensures the button appears above other elements */
+  }
+  
+  .dark .dark-mode-toggle {
+    background-color: #444;
+    color: #ffff;
+  }
+
+
+  body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
